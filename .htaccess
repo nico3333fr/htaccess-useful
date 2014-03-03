@@ -160,6 +160,12 @@ ErrorDocument 403 /403.php
 # RewriteRule /pages/(.+) /page.php?page=$1 [QSA] 
 
 
+# /my-ass -> /my-ass.php
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule (.*) $1.php [L]
+
+
 
 # ------------------------------------------------------------------------------
 # | Suppressing / Forcing the `www.` at the beginning of URLs |
