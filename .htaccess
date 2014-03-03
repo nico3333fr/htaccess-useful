@@ -72,7 +72,7 @@
 </IfModule>
 
 
-
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # force download for xslx
 
 #<FilesMatch "\.(xlsx)$">
@@ -100,11 +100,14 @@ ErrorDocument 403 /403.php
 # | File access |
 # ------------------------------------------------------------------------------
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # no listing for directories
 
 <IfModule mod_autoindex.c>
     Options -Indexes
 </IfModule>
+
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # prevent accessing to all files excepted those mentionned
@@ -112,6 +115,9 @@ ErrorDocument 403 /403.php
 #<FilesMatch "(?<!\.png|\.jpg|\.gif|\.jpeg|\.svg|\.ico)$">
 #    deny from all
 #</FilesMatch>
+
+
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # block access to hidden files & directories
@@ -121,6 +127,7 @@ ErrorDocument 403 /403.php
     RewriteCond %{SCRIPT_FILENAME} -f
     RewriteRule "(^|/)\." - [F]
 </IfModule>
+
 
 
 
@@ -141,7 +148,6 @@ ErrorDocument 403 /403.php
 # ------------------------------------------------------------------------------
 
 # IMPORTANT: NEVER USE THESE RULES AT THE SAME TIME!
-
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Option 1: rewrite www.example.com → example.com
@@ -164,6 +170,7 @@ ErrorDocument 403 /403.php
     RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 </IfModule>
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Option 3: whatever → www.example.com
 
@@ -246,8 +253,20 @@ ErrorDocument 403 /403.php
 # | Redirects |
 # ------------------------------------------------------------------------------
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # permanent
 # RedirectPermanent /old-page.php http://www.mysite.com/new-page.php
 
+
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # temporary
 # RedirectTemp /old-page.php http://www.mysite.com/new-page.php
+
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# URL with querystring to new one keeping the querystring (301 = permanent)
+RewriteCond %{QUERY_STRING} id=(\w+)  
+RewriteRule ^old_path/index\.php http://www.new_site.com/new_path/index.php?id=%1 [L,R=301]
