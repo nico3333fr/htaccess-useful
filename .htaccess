@@ -95,11 +95,27 @@
 
 
 # ------------------------------------------------------------------------------
+# | for uploadify or upload component |
+# ------------------------------------------------------------------------------
+
+#php_value max_execution_time 1800
+#php_value upload_max_filesize 99M
+#php_value post_max_size 99M
+#php_value memory_limit 99M
+#php_value max_input_time 3600 
+
+
+
+
+
+# ------------------------------------------------------------------------------
 # | Custom error messages / pages |
 # ------------------------------------------------------------------------------
 
-ErrorDocument 404 /404.php
-ErrorDocument 403 /403.php
+ErrorDocument 404 /404.php # lost & found
+ErrorDocument 403 /403.php # niet
+ErrorDocument 500 /500.php # oops, internal server error
+ErrorDocument 401 /401.php # unauthorized
 #ErrorDocument 418 /418.php # not implemented
 
 
@@ -269,6 +285,8 @@ ErrorDocument 403 /403.php
     header set vary "Accept-Encoding"
     header append vary "User-Agent"
     header append Cache-Control "private"
+    
+    #Header set X-UA-Compatible "IE=edge"
 
     # security
     Header set X-Frame-Options "DENY"
