@@ -112,11 +112,20 @@
 # | Custom error messages / pages |
 # ------------------------------------------------------------------------------
 
-ErrorDocument 404 /404.php # lost & found
-ErrorDocument 403 /403.php # niet
-ErrorDocument 500 /500.php # oops, internal server error
-ErrorDocument 401 /401.php # unauthorized
-#ErrorDocument 418 /418.php # not implemented
+# lost & found
+ErrorDocument 404 /404.php 
+
+# niet
+ErrorDocument 403 /403.php 
+
+# oops, internal server error
+ErrorDocument 500 /500.php 
+
+# unauthorized
+ErrorDocument 401 /401.php 
+
+# not implemented
+#ErrorDocument 418 /418.php 
 
 
 
@@ -176,7 +185,7 @@ ErrorDocument 401 /401.php # unauthorized
 # RewriteRule /pages/(.+) /page.php?page=$1 [QSA] 
 
 
-# /my-ass -> /my-ass.php
+# my-ass -> my-ass.php
 # RewriteCond %{REQUEST_FILENAME} !-d
 # RewriteCond %{REQUEST_FILENAME} !-f
 # RewriteRule (.*) $1.php [L]
@@ -202,13 +211,13 @@ ErrorDocument 401 /401.php # unauthorized
 
 # Option 2: rewrite example.com → www.example.com
 
-<IfModule mod_rewrite.c>
-    RewriteCond %{HTTPS} !=on
-    RewriteCond %{HTTP_HOST} !^www\. [NC]
-    RewriteCond %{SERVER_ADDR} !=127.0.0.1
-    RewriteCond %{SERVER_ADDR} !=::1
-    RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-</IfModule>
+#<IfModule mod_rewrite.c>
+#    RewriteCond %{HTTPS} !=on
+#    RewriteCond %{HTTP_HOST} !^www\. [NC]
+#    RewriteCond %{SERVER_ADDR} !=127.0.0.1
+#    RewriteCond %{SERVER_ADDR} !=::1
+#    RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+#</IfModule>
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
