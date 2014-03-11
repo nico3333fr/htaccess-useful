@@ -187,9 +187,10 @@ ErrorDocument 401 /401.php
 
 
 # my-ass -> my-ass.php
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteRule (.*) $1.php [L]
+Options -MultiViews
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
 
 
 
