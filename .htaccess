@@ -106,6 +106,12 @@
 #php_value max_input_time 3600 
 
 
+# for some strange cases/components, uncomment only if there is no other way
+#<IfModule mod_security.c>
+#    SecFilterEngine Off
+#    SecFilterScanPOST Off
+#</IfModule>
+
 
 
 
@@ -149,7 +155,10 @@ ErrorDocument 401 /401.php
 # prevent accessing to all files excepted those mentionned
 
 #<FilesMatch "(?<!\.png|\.jpg|\.gif|\.jpeg|\.svg|\.ico)$">
+# Apache 2.2
 #    deny from all
+# Apache 2.4
+#    Require all denied 
 #</FilesMatch>
 
 
@@ -192,6 +201,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [L]
 
+# sitemaps
+#RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
 
 
 # ------------------------------------------------------------------------------
@@ -199,6 +211,7 @@ RewriteRule ^(.*)$ $1.php [L]
 # ------------------------------------------------------------------------------
 
 # IMPORTANT: NEVER USE THESE RULES AT THE SAME TIME!
+# UNCOMMENT THE GOOD ONE ONLY
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Option 1: rewrite www.example.com → example.com
