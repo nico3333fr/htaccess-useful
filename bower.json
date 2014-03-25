@@ -1,0 +1,20 @@
+{
+  "name": "htaccess useful",
+  "version": "1.0.1",
+  "homepage": "https://github.com/nico3333fr/htaccess-useful",
+  "authors": [
+    "Nicolas HOFFMANN"
+  ],
+  "description": "htaccess useful is acollection of tips and a good start-base for an htaccess file",
+  "main": ".htaccess",
+  "keywords": [
+    "htaccess", "performance", "cache", "webperf", "type mimes", "quality", "security", "workflow"
+  ],
+  "license": "WTFPL",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "readme.md",
+    "readme-fr.md"
+  ]
+}
