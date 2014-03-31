@@ -1,6 +1,6 @@
 {
   "name": "htaccess useful",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/nico3333fr/htaccess-useful",
   "authors": [
     "Nicolas HOFFMANN"
@@ -14,7 +14,8 @@
   "ignore": [
     "node_modules",
     "bower_components",
-    "readme.md",
-    "readme-fr.md"
+    "README.md",
+    "readme-fr.md",
+    "bower.json"
   ]
 }
