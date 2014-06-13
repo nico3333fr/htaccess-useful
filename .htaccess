@@ -163,6 +163,25 @@ ErrorDocument 401 /401.php
 
 
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# prevent executing PHP file in a folder
+# Warning : do NEVER uncomment this in general htaccess, only in folders that need it !
+
+#RemoveHandler .php .phtml .php3 .php4 .php5
+#RemoveType .php .phtml .php3 .php4 .php5
+#php_flag engine off
+
+# To deny PHPs
+#<Files ~ "\.(php3|php4|php5|phtml|pl|cgi)$">                                                                              
+# Apache 2.2
+#    deny from all
+# Apache 2.4
+#    Require all denied                                                                                                     
+#</Files>
+
+
+
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # block access to hidden files & directories
