@@ -286,7 +286,6 @@ RewriteRule ^(.*)$ $1.php [L]
     AddOutputFilter INCLUDES;DEFLATE ico
 
     # webfonts
-    AddOutputFilter INCLUDES;DEFLATE woff
     AddOutputFilter INCLUDES;DEFLATE eot
     AddOutputFilter INCLUDES;DEFLATE svg
     AddOutputFilter INCLUDES;DEFLATE ttf
