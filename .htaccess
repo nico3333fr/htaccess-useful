@@ -27,7 +27,10 @@
 
   # Audio
     AddType audio/mp4 m4a f4a f4b
+    AddType audio/mpeg mp3
     AddType audio/ogg oga ogg opus
+    AddType audio/wav wav
+    AddType audio/webm webma
 
   # Data interchange
     AddType application/json json map
