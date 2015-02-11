@@ -18,6 +18,29 @@
 </IfModule>
 
 
+
+# ------------------------------------------------------------------------------
+# | Password protection |
+# ------------------------------------------------------------------------------
+
+
+#AuthUserFile /home/your_path/.htpasswd
+#AuthGroupFile /dev/null
+#AuthName " Restricted access "
+#AuthType basic
+
+#<Limit GET POST>
+#  Order Deny,Allow
+#  Deny From All
+#  Allow From 192.168.1.0/24
+
+#  require valid-user
+#  Satisfy Any
+#</Limit>
+
+
+
+
 # ------------------------------------------------------------------------------
 # | Additionnal charset/types/etc. |
 # ------------------------------------------------------------------------------
