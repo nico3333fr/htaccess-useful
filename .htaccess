@@ -1,7 +1,8 @@
 #
 # HTACCESS : useful tips & tricks
-# uses a lot of good ideas from html5-boilerplate https://github.com/h5bp/html5-boilerplate/blob/master/.htaccess
-#
+# uses a lot of good ideas from html5-boilerplate https://github.com/h5bp
+# https://github.com/h5bp/html5-boilerplate/blob/907838737baa7480105c000811eb49fa38e4f263/dist/.htaccess
+# 
 # made by Nicolas (@nico3333fr) 
 # under WTFPL license
 # no warranty: can't be responsible for anything if you use it
