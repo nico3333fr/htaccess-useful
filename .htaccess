@@ -343,6 +343,7 @@ ErrorDocument 401 /401.php
     header append Keep-Alive "timeout=5, max=100"
     header append Connection "Keep-Alive"
     FileETag None
+    Header set X-Content-Type-Options "nosniff"
   </IfModule>
 </FilesMatch>
 
@@ -354,6 +355,7 @@ ErrorDocument 401 /401.php
     header append vary "User-Agent"
     header append Cache-Control "private"
     FileETag None
+    Header set X-Content-Type-Options "nosniff"
   </IfModule>
 </FilesMatch>
 
