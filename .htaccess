@@ -426,3 +426,6 @@ ErrorDocument 401 /401.php
 # URL with querystring to new one keeping the querystring (301 = permanent)
 # RewriteCond %{QUERY_STRING} id=(\w+)  
 # RewriteRule ^old_path/index\.php http://www.new_site.com/new_path/index.php?id=%1 [L,R=301]
+
+# URL to a hash fragment /some-path/whatever/ => /some-path/#whatever
+# RewriteRule ^/some-path/(.*)/?$ /some-path/#$1 [R=301,L,NE]
