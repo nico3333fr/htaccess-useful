@@ -15,7 +15,7 @@
 # ------------------------------------------------------------------------------
 
 <IfModule mod_mime.c>
-    AddCharset utf-8 .atom .css .js .json .jsonld .rss .vtt .webapp .xml .txt
+    AddCharset utf-8 .atom .scss .css .js .json .jsonld .rss .vtt .webapp .xml .txt
 </IfModule>
 
 
@@ -180,7 +180,7 @@ ErrorDocument 401 /401.php
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# prevent accessing to all files excepted those mentionned
+# prevent accessing to all files excepted those mentionned (be careful to uppercase)
 
 #<FilesMatch "(?<!\.png|\.jpg|\.gif|\.jpeg|\.svg|\.ico)$">
 # Apache 2.2
