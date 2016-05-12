@@ -95,6 +95,7 @@
     AddType image/webp webp
     AddType image/x-icon cur
     AddType image/x-icon .ico
+    AddType image/vnd.microsoft.icon .ico
     AddType text/cache-manifest appcache manifest
     AddType text/css .css
     AddType image/svg+xml svg 
