@@ -345,6 +345,11 @@ ErrorDocument 401 /401.php
   </IfModule>
 </FilesMatch>
 
+# CORS
+#<IfModule mod_headers.c>
+#  Header set Access-Control-Allow-Origin "*"
+#</IfModule>
+
 
 # warning : CMSMS 2.x doesn’t like X-Frame DENY in some admin modules
 # put this in your CMS admin folder
