@@ -292,7 +292,6 @@ ErrorDocument 401 /401.php
 #    RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 #</IfModule>
 
-
 # Option 3: whatever → www.example.com
 
 #<IfModule mod_rewrite.c>
