@@ -268,6 +268,39 @@ ErrorDocument 401 /401.php
 # UNCOMMENT THE GOOD ONE ONLY
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# HTTPS
+
+# Option 1: rewrite www.example.com → example.com
+
+#<IfModule mod_rewrite.c>
+#    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+#    RewriteCond %{SERVER_ADDR} !=127.0.0.1
+#    RewriteCond %{SERVER_ADDR} !=::1
+#    RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+#</IfModule>
+
+# Option 2: rewrite example.com → www.example.com
+
+#<IfModule mod_rewrite.c>
+#    RewriteCond %{HTTP_HOST} !^www\. [NC]
+#    RewriteCond %{SERVER_ADDR} !=127.0.0.1
+#    RewriteCond %{SERVER_ADDR} !=::1
+#    RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+#</IfModule>
+
+# Option 3: whatever → www.example.com
+
+#<IfModule mod_rewrite.c>
+#    RewriteCond %{HTTP_HOST} !^www\.example\.com [NC]
+#    RewriteCond %{SERVER_ADDR} !=127.0.0.1
+#    RewriteCond %{SERVER_ADDR} !=::1
+#    RewriteRule ^ https://www.example.com%{REQUEST_URI} [R=301,L]
+#</IfModule>
+
+
+
+# HTTP
+
 # Option 1: rewrite www.example.com → example.com
 
 #<IfModule mod_rewrite.c>
