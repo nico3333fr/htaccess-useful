@@ -466,3 +466,6 @@ ErrorDocument 401 /401.php
 
 # URL to a hash fragment /some-path/whatever/ => /some-path/#whatever
 # RewriteRule ^/some-path/(.*)/?$ /some-path/#$1 [R=301,L,NE]
+
+# Rewrite short URL noooo to a file
+# RewriteRule ^noooo$ /images/nooo.gif [L]
