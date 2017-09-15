@@ -102,6 +102,7 @@
     AddType text/x-component htc
     AddType text/x-vcard vcf
     AddType application/vnd.openxmlformats .docx .pptx .xlsx .xltx . xltm .dotx .potx .ppsx
+    AddType image/webp .webp
     
 
 </IfModule>
@@ -394,7 +395,7 @@ ErrorDocument 401 /401.php
 # ------------------------------------------------------------------------------
 
 # CACHE + ETags
-<FilesMatch "\.(flv|gif|jpg|jpeg|png|ico|swf|ogv|mp4|webm|svg|ttf|woff|woff2|eot|js|css|pdf|txt)$">
+<FilesMatch "\.(flv|gif|jpg|jpeg|png|ico|swf|ogv|mp4|webm|svg|ttf|woff|woff2|eot|js|css|pdf|txt|webp)$">
   <IfModule mod_headers.c>
     Header unset Set-Cookie
     Header set Cache-Control "max-age=21772800"
