@@ -103,6 +103,7 @@
     AddType text/x-vcard vcf
     AddType application/vnd.openxmlformats .docx .pptx .xlsx .xltx . xltm .dotx .potx .ppsx
     AddType image/webp .webp
+    AddType application/manifest+json .webmanifest
     
 
 </IfModule>
