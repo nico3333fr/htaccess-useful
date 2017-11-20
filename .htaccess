@@ -15,7 +15,7 @@
 # ------------------------------------------------------------------------------
 
 <IfModule mod_mime.c>
-    AddCharset utf-8 .atom .scss .css .js .json .jsonld .rss .vtt .webapp .xml .txt .svg
+    AddCharset utf-8 .atom .scss .css .js .json .jsonld .rss .vtt .webapp .xml .txt .svg .webmanifest
 </IfModule>
 
 
