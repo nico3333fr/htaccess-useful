@@ -6,7 +6,7 @@
 # 
 # made by Nicolas (@nico3333fr) 
 # under WTFPL license
-# no warranty: can't be responsible for anything if you use it
+# no warranty: can’t be responsible for anything if you use it
 # "great power involves great responsibility"
 #
 # 
@@ -273,6 +273,13 @@ ErrorDocument 401 /401.php
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # HTTPS
+
+# whatever, go to HTTPS
+#<IfModule mod_rewrite.c>
+#  RewriteCond %{HTTPS} !=on
+#  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+#</IfModule>
+
 
 # Option 1: rewrite www.example.com → example.com
 
